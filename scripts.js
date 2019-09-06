@@ -14,6 +14,16 @@ function computerPlay() {
 
     case 3:
       return 'Scissors';
-      break;     
+      break;
   }
+};
+
+function playRound(playerSelection, computerSelection) {
+
+  let playerChoice = playerSelection.toLowerCase();
+  let computerChoice = computerSelection.toLowerCase();
+
+  if(computerSelection === playerChoice) {
+    return "Its a tie!"
+  };
 };
