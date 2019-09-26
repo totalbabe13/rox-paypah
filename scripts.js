@@ -1,5 +1,9 @@
 //alert('Yolo Binches!')
 
+let computerScore = 0;
+let yourScore = 0;
+
+
 
 function computerPlay() {
   let x = Math.floor(Math.random() * (3) + 1);
@@ -24,31 +28,53 @@ function playRound(playerSelection, computerSelection) {
 
 
   if(playerChoice === computerChoice){
-      return `${playerChoice} and ${computerChoice}: its a tie`;
+      console.log(`${playerChoice} and ${computerChoice}: its a tie`);
 
   } else if (computerChoice === "scissors" && playerChoice === "paper") {
-      return `${playerChoice} and ${computerChoice}: computer wins`;
+      console.log(`${playerChoice} and ${computerChoice}: computer wins`);
+      computerScore++;
 
   } else if (computerChoice === "paper" && playerChoice === "rocks") {
-      return `${playerChoice} and ${computerChoice}: computer wins`;
+      console.log(`${playerChoice} and ${computerChoice}: computer wins`);
+      computerScore++;
 
   } else if (computerChoice === "rocks" && playerChoice === "scissors") {
-      return `${playerChoice} and ${computerChoice}: computer wins`;
+      console.log(`${playerChoice} and ${computerChoice}: computer wins`);
+      computerScore++;
 
   } else if (playerChoice === "scissors" && computerChoice === "paper" ) {
-      return `${playerChoice} and ${computerChoice}: You win!`;
+      console.log(`${playerChoice} and ${computerChoice}: You win!`);
+      yourScore++;
 
   } else if (playerChoice === "paper" && computerChoice === "rocks" ) {
-      return `${playerChoice} and ${computerChoice}: You win!`;
+      console.log(`${playerChoice} and ${computerChoice}: You win!`);
+      yourScore++;
 
   } else if (playerChoice === "rocks" && computerChoice === "scissors" ) {
-      return `${playerChoice} and ${computerChoice}: you win!`;
-  };
+      console.log(`${playerChoice} and ${computerChoice}: You win!`);
+      yourScore++;
+  }
+
+
 };
 
 function game() {
-  let player = prompt("Select One: rocks, paper, or scissors");
+  let one = prompt("Select One: rocks, paper, or scissors");
+  playRound(one,computerPlay());
 
-  playRound(player,computerPlay)
+  let two = prompt("Select One: rocks, paper, or scissors");
+  playRound(two,computerPlay());
+
+  let three = prompt("Select One: rocks, paper, or scissors");
+  playRound(three,computerPlay());
+
+  let four = prompt("Select One: rocks, paper, or scissors");
+  playRound(four,computerPlay());
+
+  let five = prompt("Select One: rocks, paper, or scissors");
+  playRound(five,computerPlay());
+
+  let scoreKeeper = ` YOUR SCORE IS: --> ${yourScore} | COMPUTER SCORE IS: --> ${computerScore}`;
+  console.log(scoreKeeper);
 
 };
