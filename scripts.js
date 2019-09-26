@@ -19,9 +19,9 @@ function computerPlay() {
 };
 
 function playRound(playerSelection, computerSelection) {
-
   let playerChoice = playerSelection.toLowerCase();
   let computerChoice = computerSelection.toLowerCase();
+
 
   if(playerChoice === computerChoice){
       return `${playerChoice} and ${computerChoice}: its a tie`;
@@ -34,18 +34,21 @@ function playRound(playerSelection, computerSelection) {
 
   } else if (computerChoice === "rocks" && playerChoice === "scissors") {
       return `${playerChoice} and ${computerChoice}: computer wins`;
-// -  -  -  -  -  -
+
   } else if (playerChoice === "scissors" && computerChoice === "paper" ) {
-      return `${playerChoice} and ${computerChoice}: player wins`;
+      return `${playerChoice} and ${computerChoice}: You win!`;
 
   } else if (playerChoice === "paper" && computerChoice === "rocks" ) {
-      return `${playerChoice} and ${computerChoice}: player wins`;
+      return `${playerChoice} and ${computerChoice}: You win!`;
 
   } else if (playerChoice === "rocks" && computerChoice === "scissors" ) {
-      return `${playerChoice} and ${computerChoice}: player wins`;
+      return `${playerChoice} and ${computerChoice}: you win!`;
   };
-  // return `${playerChoice} and ${computerChoice}`;
+};
 
+function game() {
+  let player = prompt("Select One: rocks, paper, or scissors");
 
+  playRound(player,computerPlay)
 
 };
