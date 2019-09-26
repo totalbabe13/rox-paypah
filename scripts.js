@@ -1,4 +1,8 @@
 //alert('Yolo Binches!')
+
+let rockBtn = document.querySelector('#rock');
+let paperBtn = document.querySelector('#paper');
+let scissorBtn = document.querySelector('#scissor');
 let computerScore = 0;
 let yourScore = 0;
 
@@ -22,41 +26,46 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   let playerChoice = playerSelection.toLowerCase();
   let computerChoice = computerSelection.toLowerCase();
+  let outCome
 
   if(playerChoice === computerChoice){
-      console.log(`${playerChoice} and ${computerChoice}: its a tie`);
+      //console.log(`${playerChoice} and ${computerChoice}: its a tie`);
+      outCome = `${playerChoice} and ${computerChoice}: its a tie`
 
   } else if (computerChoice === "scissors" && playerChoice === "paper") {
-      console.log(`${playerChoice} and ${computerChoice}: computer wins`);
+      outCome = (`${playerChoice} and ${computerChoice}: computer wins`);
       computerScore++;
 
   } else if (computerChoice === "paper" && playerChoice === "rocks") {
-      console.log(`${playerChoice} and ${computerChoice}: computer wins`);
+      outCome = (`${playerChoice} and ${computerChoice}: computer wins`);
       computerScore++;
 
   } else if (computerChoice === "rocks" && playerChoice === "scissors") {
-      console.log(`${playerChoice} and ${computerChoice}: computer wins`);
+      outCome = (`${playerChoice} and ${computerChoice}: computer wins`);
       computerScore++;
 
   } else if (playerChoice === "scissors" && computerChoice === "paper" ) {
-      console.log(`${playerChoice} and ${computerChoice}: You win!`);
+      outCome = (`${playerChoice} and ${computerChoice}: You win!`);
       yourScore++;
 
   } else if (playerChoice === "paper" && computerChoice === "rocks" ) {
-      console.log(`${playerChoice} and ${computerChoice}: You win!`);
+      outCome = (`${playerChoice} and ${computerChoice}: You win!`);
       yourScore++;
 
   } else if (playerChoice === "rocks" && computerChoice === "scissors" ) {
-      console.log(`${playerChoice} and ${computerChoice}: You win!`);
+      outCome = (`${playerChoice} and ${computerChoice}: You win!`);
       yourScore++;
   }
+  return outCome;
 };
 
-function game() {
-  let playerOptions = "Select One: rocks, paper, or scissors";
-  for (let round = 0; round < 5; round++){
-    let one = prompt(playerOptions);
-    playRound(one,computerPlay());
-  }
+
+function game(xChoice) {
+  let round = playRound(xChoice, computerPlay());
+  console.log(round);
   console.log(` YOUR SCORE IS: --> ${yourScore} | COMPUTER SCORE IS: --> ${computerScore}`);
 };
+
+rockBtn.onclick = () => game('rocks');
+paperBtn.onclick = () => game('paper');
+scissorBtn.onclick = () => game('scissors');
