@@ -58,6 +58,5 @@ function game() {
     let one = prompt(playerOptions);
     playRound(one,computerPlay());
   }
-  let scoreKeeper = ` YOUR SCORE IS: --> ${yourScore} | COMPUTER SCORE IS: --> ${computerScore}`;
-  console.log(scoreKeeper);
+  console.log(` YOUR SCORE IS: --> ${yourScore} | COMPUTER SCORE IS: --> ${computerScore}`);
 };
