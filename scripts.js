@@ -1,9 +1,6 @@
 //alert('Yolo Binches!')
-
 let computerScore = 0;
 let yourScore = 0;
-
-
 
 function computerPlay() {
   let x = Math.floor(Math.random() * (3) + 1);
@@ -25,7 +22,6 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   let playerChoice = playerSelection.toLowerCase();
   let computerChoice = computerSelection.toLowerCase();
-
 
   if(playerChoice === computerChoice){
       console.log(`${playerChoice} and ${computerChoice}: its a tie`);
@@ -54,27 +50,14 @@ function playRound(playerSelection, computerSelection) {
       console.log(`${playerChoice} and ${computerChoice}: You win!`);
       yourScore++;
   }
-
-
 };
 
 function game() {
-  let one = prompt("Select One: rocks, paper, or scissors");
-  playRound(one,computerPlay());
-
-  let two = prompt("Select One: rocks, paper, or scissors");
-  playRound(two,computerPlay());
-
-  let three = prompt("Select One: rocks, paper, or scissors");
-  playRound(three,computerPlay());
-
-  let four = prompt("Select One: rocks, paper, or scissors");
-  playRound(four,computerPlay());
-
-  let five = prompt("Select One: rocks, paper, or scissors");
-  playRound(five,computerPlay());
-
+  let playerOptions = "Select One: rocks, paper, or scissors";
+  for (let round = 0; round < 5; round++){
+    let one = prompt(playerOptions);
+    playRound(one,computerPlay());
+  }
   let scoreKeeper = ` YOUR SCORE IS: --> ${yourScore} | COMPUTER SCORE IS: --> ${computerScore}`;
   console.log(scoreKeeper);
-
 };
