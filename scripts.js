@@ -1,10 +1,41 @@
 //alert('Yolo Binches!')
 
-let rockBtn = document.querySelector('#rock');
-let paperBtn = document.querySelector('#paper');
-let scissorBtn = document.querySelector('#scissor');
+// let rockBtn = document.querySelector('#rock');
+// let paperBtn = document.querySelector('#paper');
+// let scissorBtn = document.querySelector('#scissor');
+let buttonDiv = document.createElement("div");
+buttonDiv.setAttribute("id","buttonContainer")
+const scriptNode = document.querySelector("script");
+document.body.insertBefore(buttonDiv,scriptNode);
+
+let rockBtn = document.createElement("button");
+rockBtn.setAttribute("id","rock");
+rockBtn.textContent= "Rock";
+
+
+let paperBtn   = document.createElement("button");
+paperBtn.setAttribute("id","paper")
+paperBtn.textContent = "Paper"
+
+let scissorBtn = document.createElement("button");
+scissorBtn.setAttribute("id","scissor")
+scissorBtn.textContent = "Scissors"
+
+buttonDiv.appendChild(rockBtn);
+buttonDiv.appendChild(paperBtn);
+buttonDiv.appendChild(scissorBtn);
+
+
+
+
+
+
 let computerScore = 0;
 let yourScore = 0;
+
+
+
+
 
 function computerPlay() {
   let x = Math.floor(Math.random() * (3) + 1);
