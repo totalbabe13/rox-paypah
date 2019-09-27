@@ -3,35 +3,51 @@
 // let rockBtn = document.querySelector('#rock');
 // let paperBtn = document.querySelector('#paper');
 // let scissorBtn = document.querySelector('#scissor');
+let computerScore = 0;
+let yourScore = 0;
+
 let buttonDiv = document.createElement("div");
-buttonDiv.setAttribute("id","buttonContainer")
+let scoreDiv  = document.createElement("div");
+
+buttonDiv.setAttribute("id","buttonContainer");
+scoreDiv.setAttribute("id","scoreDiv");
 const scriptNode = document.querySelector("script");
-document.body.insertBefore(buttonDiv,scriptNode);
+document.body.insertBefore(scoreDiv,scriptNode);
+document.body.insertBefore(buttonDiv,scoreDiv);
+buttonDiv.style.cssText = 'border: 1px solid red; height: 40vh; display: grid; grid-template-columns: 1fr 1fr 1fr;grid-column-gap: 1vh;';
+scoreDiv.style.cssText  = "border: 1px solid blue; height: 40vh; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;"
 
 let rockBtn = document.createElement("button");
 rockBtn.setAttribute("id","rock");
 rockBtn.textContent= "Rock";
-
+rockBtn.style.cssText = "border-radius: 50%; margin-top: 6vh; margin-bottom: 6vh;"
 
 let paperBtn   = document.createElement("button");
 paperBtn.setAttribute("id","paper")
 paperBtn.textContent = "Paper"
+paperBtn.style.cssText = "border-radius: 50%; margin-top: 6vh; margin-bottom: 6vh;"
 
 let scissorBtn = document.createElement("button");
 scissorBtn.setAttribute("id","scissor")
 scissorBtn.textContent = "Scissors"
+scissorBtn.style.cssText = "border-radius: 50%; margin-top: 6vh; margin-bottom: 6vh;"
+
+let scoreHeader = document.createElement("h1");
+scoreHeader.setAttribute("id","scoreKeeper");
+scoreHeader.textContent = "S C O R E";
+scoreHeader.style.cssText = "grid-column: 1 / span 2; text-align: center;"
 
 buttonDiv.appendChild(rockBtn);
 buttonDiv.appendChild(paperBtn);
 buttonDiv.appendChild(scissorBtn);
+scoreDiv.appendChild(scoreHeader);
 
 
 
 
 
 
-let computerScore = 0;
-let yourScore = 0;
+
 
 
 
